@@ -1,0 +1,48 @@
+﻿@model SignUpViewModell
+
+<form asp-action="Index">
+    <div class="row gy-3 overflow-hidden">
+        <div class="col-12">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="UserName" type="text" class="form-control" name="Username" id="UserName" placeholder="UserName" required>
+                <label asp-for="UserName" class="form-label">User Name</label>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-floating mb-3">
+                <input asp-for="Email" type="email" class="form-control" name="Email" id="Email" placeholder="name@example.com" required>
+                <label asp-for="Email" class="form-label">Email</label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-floating mb-3">
+                <input asp-for="Password" type="Password" class="form-control" name="Password" id="Password" value="" placeholder="Password" required>
+                <label asp-for="Password" class="form-label">Password</label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="RePassword" type="RePassword" class="form-control" name="RePassword" id="RePassword" value="" placeholder="RePassword" required>
+                <label asp-for="RePassword" class="form-label">RePassword</label>
+                <span asp-validation-for="RePassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="d-grid">
+                <button class="btn btn-dark btn-lg" type="submit">Sign up</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="row">
+    <div class="col-12">
+        <p class="mb-0 mt-5 text-secondary text-center">Already have an account? <a asp-controller="LogIn" asp-action="Login" class="link-primary text-decoration-none">Sign in</a></p>
+    </div>
+</div>
+
+@section Scripts
+{
+<partial name="_ValidationScriptsPartial" />
+}
